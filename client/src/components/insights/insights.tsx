@@ -236,7 +236,6 @@ export const Insights = ({
                                                   onClick={() =>
                                                       deleteInsight(id)
                                                   }
-                                                  data-testid="trash2-icon"
                                               />
                                           </div>
                                       </div>
