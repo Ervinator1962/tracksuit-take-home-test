@@ -97,13 +97,40 @@ export const Insights = ({
                             ({ id, text, createdAt, brand }) => (
                                 <div className={styles.insight} key={id}>
                                     <div className={styles["insight-meta"]}>
-                                        <span>{brand}</span>
+                                        <div className={styles["brand-badge"]}>
+                                            <span
+                                                className={
+                                                    styles["brand-label"]
+                                                }
+                                            >
+                                                Brand {brand}
+                                            </span>
+                                        </div>
                                         <div
                                             className={
                                                 styles["insight-meta-details"]
                                             }
                                         >
-                                            <span>{formatDate(createdAt)}</span>
+                                            <div
+                                                className={
+                                                    styles["date-display"]
+                                                }
+                                            >
+                                                <span
+                                                    className={
+                                                        styles["date-label"]
+                                                    }
+                                                >
+                                                    Created
+                                                </span>
+                                                <span
+                                                    className={
+                                                        styles["date-value"]
+                                                    }
+                                                >
+                                                    {formatDate(createdAt)}
+                                                </span>
+                                            </div>
                                             <Trash2Icon
                                                 className={
                                                     styles["insight-delete"]

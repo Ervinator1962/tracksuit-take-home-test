@@ -7,14 +7,43 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: var(--size-6);
+  gap: var(--size-5);
   margin-top: var(--size-6);
+  padding: var(--size-2);
+}
+
+.list:empty {
+  text-align: center;
+  padding: var(--size-12);
+  color: var(--color-grey-500);
+  font: var(--text-lg);
 }
 
 .insight {
-  padding: var(--size-4);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-grey-300);
+  padding: var(--size-5);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-grey-200);
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 200ms ease;
+  position: relative;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-grey-300);
+  }
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-purple-500), var(--color-blue-500));
+  }
 }
 
 .insight-meta {
@@ -23,25 +52,80 @@
   justify-content: space-between;
   font: var(--text-sm);
   color: var(--color-text-light);
+  margin-bottom: var(--size-3);
+  padding-bottom: var(--size-3);
+  border-bottom: 1px solid var(--color-grey-100);
+}
+
+.brand-label {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-grey-500);
+}
+
+.brand-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-purple-600);
+  background: var(--color-purple-50);
+  padding: var(--size-1) var(--size-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-purple-200);
 }
 
 .insight-meta-details {
   display: flex;
   align-items: center;
-  gap: var(--size-3);
+  gap: var(--size-4);
+}
+
+.date-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--size-1);
+}
+
+.date-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-grey-500);
+}
+
+.date-value {
+  font-size: 12px;
+  color: var(--color-grey-600);
+  font-weight: 500;
 }
 
 .insight-delete {
-  width: var(--size-5);
-  height: var(--size-5);
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  transition: stroke 250ms ease;
+  padding: var(--size-2);
+  border-radius: var(--radius-md);
+  transition: all 200ms ease;
+  color: var(--color-grey-400);
+  
   &:hover {
-    stroke: var(--color-red-500);
+    color: var(--color-red-500);
+    background: var(--color-red-50);
+    transform: scale(1.1);
+  }
+  
+  &:active {
+    transform: scale(0.95);
   }
 }
 
 .insight-content {
   font: var(--text-lg);
+  line-height: 1.6;
+  color: var(--color-text);
   margin: var(--size-4) 0 0;
+  padding: var(--size-3) 0;
 }
