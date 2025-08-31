@@ -4,7 +4,10 @@ import { render } from "@testing-library/react";
 
 describe("header", () => {
   it("renders", () => {
-    const { getByText } = render(<Header />);
+    const mockRefetchInsights = () => {};
+    const { getByText } = render(
+        <Header refetchInsights={mockRefetchInsights} />
+    );
     expect(getByText(HEADER_TEXT)).toBeTruthy();
   });
 });

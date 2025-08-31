@@ -7,9 +7,10 @@ export const HEADER_TEXT = "Suit Tracker Insights";
 
 type HeaderProps = {
     children?: React.ReactNode;
+    refetchInsights: () => void;
 };
 
-export const Header = ({ children }: HeaderProps) => {
+export const Header = ({ children, refetchInsights }: HeaderProps) => {
     const [addInsightOpen, setAddInsightOpen] = useState(false);
 
     return (
@@ -30,6 +31,7 @@ export const Header = ({ children }: HeaderProps) => {
             <AddInsight
                 open={addInsightOpen}
                 onClose={() => setAddInsightOpen(false)}
+                refetchInsights={refetchInsights}
             />
         </>
     );

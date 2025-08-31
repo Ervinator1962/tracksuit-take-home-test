@@ -33,9 +33,11 @@ export const App = () => {
         });
     }, [shouldRefetchInsights]);
 
+    const refetchInsights = () => setShouldRefetchInsights(true);
+
     return (
         <main className={styles.main}>
-            <Header>
+            <Header refetchInsights={refetchInsights}>
                 <InsightsControls
                     selectedBrand={selectedBrand}
                     setSelectedBrand={setSelectedBrand}
@@ -47,7 +49,7 @@ export const App = () => {
             <Insights
                 className={styles.insights}
                 insights={insights}
-                refetchInsights={() => setShouldRefetchInsights(true)}
+                refetchInsights={refetchInsights}
                 sortOrder={sortOrder}
                 selectedBrand={selectedBrand}
             />

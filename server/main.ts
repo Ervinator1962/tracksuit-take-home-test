@@ -73,9 +73,16 @@ router.post("/insights/create", async (ctx: oak.Context) => {
   
   const params = parse.data;
   
-  createInsight({ db, data: params });
-
-  console.log("created insight");
+  try {
+    createInsight({ db, data: params });
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    ctx.response.body = {
+      "error": errorMessage
+    };
+    ctx.response.status = 500;
+    return;
+  }
 
   ctx.response.body = { 
     "message": "Insight created"

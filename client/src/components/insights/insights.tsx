@@ -78,13 +78,15 @@ export const Insights = ({
             setToastMessage("Successfully deleted insight");
             refetchInsights();
         } catch (error) {
-            console.error("Failed to delete insight", error);
             setDeleteStatus("error");
-            setToastMessage(
-                error instanceof Error
-                    ? error.message
-                    : "Failed to delete insight"
-            );
+
+            let toastMessage = "Failed to delete insight";
+
+            if (error instanceof Error) {
+                toastMessage += `: ${error.message}`;
+            }
+
+            setToastMessage(toastMessage);
         }
     };
 
