@@ -102,15 +102,26 @@
   --color-off-white: #faf7f0;
   --color-black: #000000;
 
+  --color-grey-50: #f9fafb;
   --color-grey-100: #edeaed;
+  --color-grey-200: #e5e7eb;
   --color-grey-300: #e3dfe3;
+  --color-grey-400: #9ca3af;
   --color-grey-500: #979598;
   --color-grey-600: #777580;
   --color-grey-700: #5f5e66;
 
   --color-purple-700: #4d3777;
+  --color-purple-600: #7c3aed;
   --color-purple-500: #8f80cc;
   --color-purple-300: #bdb1e8;
+  --color-purple-200: #e9d5ff;
+  --color-purple-100: #f3f4f6;
+  --color-purple-50: #faf5ff;
+
+  --color-blue-700: #1e3a8a;
+  --color-blue-500: #3b82f6;
+  --color-blue-50: #eff6ff;
 
   --color-green-700: #1e7543;
   --color-green-500: #1cb25c;
@@ -123,6 +134,7 @@
   --color-red-700: #b0001c;
   --color-red-500: #f04f4d;
   --color-red-300: #f89897;
+  --color-red-50: #fef2f2;
 
   /* Border radiuses */
   --radius-xs: 4px;

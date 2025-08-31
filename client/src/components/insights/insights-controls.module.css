@@ -28,7 +28,6 @@
   border: 1px solid var(--color-purple-500);
   border-radius: var(--radius-sm);
   font: var(--text-xs);
-  background: var(--color-purple-600);
   color: var(--color-off-white);
   cursor: pointer;
   appearance: none;
