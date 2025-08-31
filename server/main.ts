@@ -93,9 +93,18 @@ router.post("/insights/:id/delete", (ctx: oak.Context) => {
 
   ctx.assert(parse.success, 400, "Invalid request body: " + parse.error?.message);
 
-  deleteInsight({ db, data: { id: parse.data.id } });
+  try {
+    deleteInsight({ db, data: { id: parse.data.id } });
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    ctx.response.body = {
+      "error": errorMessage
+    };
+    
+    ctx.response.status = 400;
+    return;
+  }
 
-  console.log("deleted insight");
   ctx.response.body = {
     "message": "Insight deleted"
   };

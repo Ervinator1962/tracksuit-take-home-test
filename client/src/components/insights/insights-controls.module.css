@@ -1,0 +1,54 @@
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--size-3);
+}
+
+.controlGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2);
+}
+
+.label {
+  font: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-off-white);
+  white-space: nowrap;
+}
+
+.selectWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.select {
+  padding: var(--size-1) var(--size-2);
+  padding-right: var(--size-6);
+  border: 1px solid var(--color-purple-500);
+  border-radius: var(--radius-sm);
+  font: var(--text-xs);
+  background: var(--color-purple-600);
+  color: var(--color-off-white);
+  cursor: pointer;
+  appearance: none;
+  min-width: 60px;
+  
+  &:focus {
+    outline: 2px solid var(--color-purple-300);
+    outline-offset: 2px;
+  }
+  
+  &:hover {
+    background: var(--color-purple-500);
+  }
+}
+
+.selectIcon {
+  position: absolute;
+  right: var(--size-1);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-purple-300);
+} 

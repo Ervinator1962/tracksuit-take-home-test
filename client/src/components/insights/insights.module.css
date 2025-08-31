@@ -2,6 +2,8 @@
   font: var(--text-2xl);
 }
 
+
+
 .list {
   display: flex;
   flex-direction: column;

@@ -18,3 +18,9 @@
   font: var(--text-lg);
   font-weight: var(--weight-medium);
 }
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4);
+}

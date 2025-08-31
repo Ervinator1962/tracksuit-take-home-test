@@ -5,25 +5,32 @@ import { AddInsight } from "../add-insight/add-insight.tsx";
 
 export const HEADER_TEXT = "Suit Tracker Insights";
 
-export const Header = () => {
-  const [addInsightOpen, setAddInsightOpen] = useState(false);
+type HeaderProps = {
+    children?: React.ReactNode;
+};
 
-  return (
-    <>
-      <header className={styles.header}>
-        <div className={styles.inner}>
-          <span className={styles.logo}>{HEADER_TEXT}</span>
-          <Button
-            label="Add insight"
-            theme="secondary"
-            onClick={() => setAddInsightOpen(true)}
-          />
-        </div>
-      </header>
-      <AddInsight
-        open={addInsightOpen}
-        onClose={() => setAddInsightOpen(false)}
-      />
-    </>
-  );
+export const Header = ({ children }: HeaderProps) => {
+    const [addInsightOpen, setAddInsightOpen] = useState(false);
+
+    return (
+        <>
+            <header className={styles.header}>
+                <div className={styles.inner}>
+                    <span className={styles.logo}>{HEADER_TEXT}</span>
+                    <div className={styles.controls}>
+                        {children}
+                        <Button
+                            label="Add insight"
+                            theme="secondary"
+                            onClick={() => setAddInsightOpen(true)}
+                        />
+                    </div>
+                </div>
+            </header>
+            <AddInsight
+                open={addInsightOpen}
+                onClose={() => setAddInsightOpen(false)}
+            />
+        </>
+    );
 };
